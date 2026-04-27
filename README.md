@@ -1,78 +1,68 @@
-SpaceX Launch Data Analysis and Prediction 
+# SpaceX Falcon 9 Landing Predictor - Full Stack Application
 
-This project analyzes SpaceX Falcon 9 launch data and builds machine learning models to predict whether the first stage of the rocket will successfully land.
-The project follows the complete Data Science methodology including: Data Collection using API Web Scraping Data Wrangling Exploratory Data Analysis (EDA) SQL Analysis Interactive Visual Analytics Machine Learning Prediction
+![SpaceX Falcon 9 Landing Predictor](Screenshots/dashboard_screenshot.jpg) <!-- Ensure you add a screenshot here later! -->
 
-Business Problem
+Welcome to the **SpaceX Falcon 9 Landing Predictor**. This project predicts whether the first stage of a SpaceX Falcon 9 rocket will land successfully. Landing the first stage significantly reduces the cost of space launches (from roughly $165M to ~$60M), a key competitive advantage for SpaceX. 
 
-SpaceX reduces launch cost by reusing Falcon 9 rocket boosters. Predicting booster landing success helps estimate launch cost and improves decision-making for space missions.
+Originally built as a series of standalone Jupyter Notebooks evaluating different Machine Learning models, this repository has been professionally refactored into a sleek, full-stack web application! 
 
-Technologies Used
-Python
-Pandas
-NumPy
-Matplotlib & Seaborn
-Plotly Dash
-Folium Maps
-SQL
-Scikit-learn
-BeautifulSoup
-Jupyter Notebook
+## 🚀 Key Features
 
-Data Sources
+*   **Interactive React Dashboard**: A gorgeous dark-themed, glassmorphic UI built natively in React (Vite) and styled from scratch without heavy CSS frameworks. 
+*   **FastAPI Machine Learning Server**: A highly optimized Python backend that streams historical datasets and serves live Machine Learning predictions from our optimal trained model.
+*   **Live Mission Predictor**: Users can interact with the dynamic frontend UI, tweak launch parameters (Payload Mass, Orbit, Launch Site, Grid Fins), and receive live, visually-animated probability confidence scores of landing success!
+*   **End-to-End ML Pipeline**: The `backend/train_model.py` pipeline ingests raw `scikit-learn` datasets and serializes complex categorical classifiers (`LogisticRegression`) complete with standard scalers directly to disk.
 
-SpaceX REST API
-Wikipedia
-Web Scraping
+## 🛠️ Technology Stack
 
-Project Structure 
-SpaceX-Capstone/ │
-├── notebooks/ 
-│ api_data_collection.ipynb
-│ web_scraping.ipynb
-│ data_wrangling.ipynb
-│ eda_visualization.ipynb
-│ sql_analysis.ipynb
-│ folium_map.ipynb
-│ ml_prediction.ipynb
-│ dash_app.py │
-├── dataset/
-├── screenshots/
-├── README.md
+**Frontend**
+*   **React + Vite**: For a lightning-fast, modular UI architecture.
+*   **Recharts**: Powering the dynamic payload scatter plots and site-success pie charts.
+*   **Lucide-React**: Clean, lightweight iconography.
 
-Project Workflow
+**Backend**
+*   **FastAPI**: Blazing fast Python web server for serving data and inference.
+*   **Scikit-Learn**: Implementation of the LogisticRegression classification algorithm.
+*   **Pandas & NumPy**: Core data manipulation and feature one-hot encoding.
+*   **Uvicorn**: ASGI web server implementation.
 
-Data Collection
+## 💻 Running the Application Locally
 
-Collected launch data using SpaceX API Extracted historical launch data using web scraping
+The application utilizes a decoupled architecture, operating both the React frontend and Python backend simultaneously.
 
-Data Wrangling
+### 1. Start the Machine Learning Backend
+Open a terminal in the project root and start the API:
+```bash
+cd backend
+python -m venv venv
 
-Cleaned missing values Created landing success classification Selected important features
+# Windows
+.\venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
 
-Exploratory Data Analysis
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+*The API will start at `http://127.0.0.1:8000`*
 
-Launch success rate by site Payload vs landing success Orbit vs success rate Yearly launch trend
+### 2. Start the Frontend Dashboard
+Open a second terminal to run the UI:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*Access the dashboard at `http://localhost:5173`*
 
-SQL Analysis
+## 📊 Data Science Methodology
 
-Performed queries to analyze:
+Before this full-stack migration, exhaustive data analysis and modeling were performed using standard Data Science tools:
+1.  **Data Collection**: REST API calls to the SpaceX API and web scraping Wikipedia for Falcon 9 launch records.
+2.  **Data Wrangling**: Cleaning missing values and calculating payload mass means using Pandas.
+3.  **Exploratory Data Analysis (EDA)**: Leveraging SQL (Db2) and visualization libraries (Matplotlib, Seaborn) to uncover launch trends.
+4.  **Interactive Visualizations**: Prototyping dashboards using Folium for geographic maps and Plotly Dash.
+5.  **Predictive Modeling**: Training Logistic Regression, SVM, Decision Trees, and KNN models to find the highest accuracy classifier. `LogisticRegression` was ultimately chosen for the live backend API!
 
-Launch counts Payload distribution Success rates by site Booster version performance
-
-Interactive Visualization
-
-Folium map showing launch site locations Plotly Dash dashboard with:
-Success pie chart Payload vs outcome scatter plot
-
-Machine Learning Prediction
-
-Models Used:
-
-Logistic Regression Decision Tree Random Forest Support Vector Machine Model evaluation included:
-Accuracy score Confusion matrix Best model comparison
-
-Results
-
-Payload mass and launch site strongly influence landing success. Certain booster versions show higher reliability.
-Machine learning models achieved strong prediction accuracy.
+---
+*Developed by Pratik004-PS*
