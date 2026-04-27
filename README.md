@@ -1,4 +1,4 @@
-# SpaceX Falcon 9 Landing Predictor - Full Stack Application
+SpaceX Falcon 9 Landing Predictor - Full Stack Application
 
 ![SpaceX Falcon 9 Landing Predictor](Screenshots/dashboard_screenshot.jpg) <!-- Ensure you add a screenshot here later! -->
 
@@ -6,14 +6,14 @@ Welcome to the **SpaceX Falcon 9 Landing Predictor**. This project predicts whet
 
 Originally built as a series of standalone Jupyter Notebooks evaluating different Machine Learning models, this repository has been professionally refactored into a sleek, full-stack web application! 
 
-## 🚀 Key Features
+Key Features
 
 *   **Interactive React Dashboard**: A gorgeous dark-themed, glassmorphic UI built natively in React (Vite) and styled from scratch without heavy CSS frameworks. 
 *   **FastAPI Machine Learning Server**: A highly optimized Python backend that streams historical datasets and serves live Machine Learning predictions from our optimal trained model.
 *   **Live Mission Predictor**: Users can interact with the dynamic frontend UI, tweak launch parameters (Payload Mass, Orbit, Launch Site, Grid Fins), and receive live, visually-animated probability confidence scores of landing success!
 *   **End-to-End ML Pipeline**: The `backend/train_model.py` pipeline ingests raw `scikit-learn` datasets and serializes complex categorical classifiers (`LogisticRegression`) complete with standard scalers directly to disk.
 
-## 🛠️ Technology Stack
+Technology Stack
 
 **Frontend**
 *   **React + Vite**: For a lightning-fast, modular UI architecture.
@@ -26,7 +26,7 @@ Originally built as a series of standalone Jupyter Notebooks evaluating differen
 *   **Pandas & NumPy**: Core data manipulation and feature one-hot encoding.
 *   **Uvicorn**: ASGI web server implementation.
 
-## 💻 Running the Application Locally
+Running the Application Locally
 
 The application utilizes a decoupled architecture, operating both the React frontend and Python backend simultaneously.
 
