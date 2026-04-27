@@ -19,7 +19,7 @@ Scikit-learn
 BeautifulSoup
 Jupyter Notebook
 
-📊 Data Sources
+Data Sources
 
 SpaceX REST API
 Wikipedia
