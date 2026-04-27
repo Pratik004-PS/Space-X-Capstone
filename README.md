@@ -1,13 +1,13 @@
-🚀 SpaceX Launch Data Analysis and Prediction 
+SpaceX Launch Data Analysis and Prediction 
 
 This project analyzes SpaceX Falcon 9 launch data and builds machine learning models to predict whether the first stage of the rocket will successfully land.
 The project follows the complete Data Science methodology including: Data Collection using API Web Scraping Data Wrangling Exploratory Data Analysis (EDA) SQL Analysis Interactive Visual Analytics Machine Learning Prediction
 
-🎯 Business Problem
+Business Problem
 
 SpaceX reduces launch cost by reusing Falcon 9 rocket boosters. Predicting booster landing success helps estimate launch cost and improves decision-making for space missions.
 
-🧰 Technologies Used
+Technologies Used
 Python
 Pandas
 NumPy
@@ -25,7 +25,7 @@ SpaceX REST API
 Wikipedia
 Web Scraping
 
-📂 Project Structure 
+Project Structure 
 SpaceX-Capstone/ │
 ├── notebooks/ 
 │ api_data_collection.ipynb
@@ -40,39 +40,39 @@ SpaceX-Capstone/ │
 ├── screenshots/
 ├── README.md
 
-🔍 Project Workflow
+Project Workflow
 
-1️⃣ Data Collection
+Data Collection
 
 Collected launch data using SpaceX API Extracted historical launch data using web scraping
 
-2️⃣ Data Wrangling
+Data Wrangling
 
 Cleaned missing values Created landing success classification Selected important features
 
-3️⃣ Exploratory Data Analysis
+Exploratory Data Analysis
 
 Launch success rate by site Payload vs landing success Orbit vs success rate Yearly launch trend
 
-4️⃣ SQL Analysis
+SQL Analysis
 
 Performed queries to analyze:
 
 Launch counts Payload distribution Success rates by site Booster version performance
 
-5️⃣ Interactive Visualization
+Interactive Visualization
 
 Folium map showing launch site locations Plotly Dash dashboard with:
 Success pie chart Payload vs outcome scatter plot
 
-6️⃣ Machine Learning Prediction
+Machine Learning Prediction
 
 Models Used:
 
 Logistic Regression Decision Tree Random Forest Support Vector Machine Model evaluation included:
 Accuracy score Confusion matrix Best model comparison
 
-📈 Results
+Results
 
 Payload mass and launch site strongly influence landing success. Certain booster versions show higher reliability.
 Machine learning models achieved strong prediction accuracy.
